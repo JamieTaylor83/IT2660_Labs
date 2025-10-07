@@ -1,0 +1,35 @@
+//import java.util.*;
+/*
+ * IT-2660 - Lab 3
+ * Student Name: Jamie Taylor
+ */
+
+public class Lab3 {
+    public static void main(String[] args) {
+        String text = "ABCD"; // Do NOT modify this
+        String bestCase;      // Pattern for best-case scenario
+        String worstCase;     // Pattern for worst-case scenario
+
+        // --- Best-case scenario ---
+        bestCase = "A"; // Pattern matches immediately
+        long startTime = System.nanoTime();
+        match(text, bestCase); // Provided function
+        long endTime = System.nanoTime();
+        long elapsedTimeBest = endTime - startTime;
+        System.out.println("Elapsed time for best-case: " + elapsedTimeBest + " ns");
+
+        // --- Worst-case scenario ---
+        worstCase = "D"; // Pattern that forces scanning through most of the text
+        startTime = System.nanoTime();
+        match(text, worstCase);
+        endTime = System.nanoTime();
+        long elapsedTimeWorst = endTime - startTime;
+        System.out.println("Elapsed time for worst-case: " + elapsedTimeWorst + " ns");
+    }
+
+    // Dummy match method (replace with your actual provided method)
+    public static boolean match(String text, String pattern) {
+        // Example implementation from the book
+        return text.contains(pattern);
+    }
+}
